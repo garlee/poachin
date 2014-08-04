@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   resources :users
 
   resources :user_signups, only: [:new, :create]
-root 'user_signups#new'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-root :to => 'static_pages#index.html.erb'
+
+
+root 'user_signups#new'
+
 
 get "home" => "static_pages#index.html.erb"
   # Example of regular route:
